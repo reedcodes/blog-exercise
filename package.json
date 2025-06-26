@@ -1,0 +1,28 @@
+{
+  "name": "blog-exercise",
+  "version": "0.0.1",
+  "description": "blog exercise",
+  "author": "Reed Piernock",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reedcodes/blog-exercise/"
+  },
+  "bugs": {
+    "url": "https://github.com/reedcodes/blog-exercise/issues/"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.89.2"
+  },
+  "main": "eleventy.config.js",
+  "type": "module",
+  "scripts": {
+    "build:css": "sass --style=compressed --no-source-map ./source/_scss:./site/_assets/css",
+    "watch:css": "sass --watch ./source/_scss:./site/_assets/css",
+    "build:site": "npx @11ty/eleventy --quiet",
+    "watch:site": "npx @11ty/eleventy --serve",
+    "build": "npm-run-all build:*",
+    "start": "npm-run-all --parallel watch:*"
+  }
+}

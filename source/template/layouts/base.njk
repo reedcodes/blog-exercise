@@ -1,13 +1,23 @@
 {%- from "head.njk" import head with context -%}
+{%- from "header.njk" import header with context -%}
+{%- from "nav.njk" import nav with context -%}
+{%- from "footer.njk" import footer with context -%}
 
 <!doctype html>
 <html>
 
 <head>
-	{{- head() }}
+	{{- head() -}}
 </head>
 
 <body>
+
+	<header id="header">{{- header() -}}</header>
+	<nav id="nav-main">{{- nav(items=collections.pages) -}}</nav>
+
+	<main id="main">{{- content | safe -}}</main>
+
+	<footer id="footer">{{- footer() -}}</footer>
 
 </body>
 

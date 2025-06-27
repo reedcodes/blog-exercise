@@ -1,0 +1,25 @@
+{%- macro head() -%}
+
+{#- Set up page data. #}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{#- This is the title of the page, that appears in the browser title bar.
+		It pulls in the title from the page or post front matter, and appends the
+		site title to the title. #}
+<title>{{- title }} [{{ meta.title }}]</title>
+<meta name="title" content="{{- title }} [{{ meta.title }}]">
+
+{#- Set up content data. #}
+<meta name="author" content="{{- meta.author }}">
+<meta name="description" content="{{- meta.description }}">
+
+{#- Set up site data. #}
+<meta name="generator" content="{{- meta.generator }}">
+<link rel="canonical" href="{{- meta.uri }}">
+<link rel="icon" href="{{- meta.favicon }}">
+
+{#- Set up site assets. #}
+<link rel="stylesheet" href="">
+
+{%- endmacro -%}

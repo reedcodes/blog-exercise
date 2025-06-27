@@ -1,0 +1,11 @@
+{
+	"title": "Blog Exercise",
+	"author": "Reed Piernock",
+	"description": "A coding exercise to create a simple blog",
+	"generator": "eleventy",
+	"type": "website",
+	"charset": "UTF-8",
+	"language": "en-US",
+	"favicon": "favicon.png",
+	"uri": "https://reedcodes.github.io/blog-exercise/"
+}

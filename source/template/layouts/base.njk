@@ -6,18 +6,18 @@
 <!doctype html>
 <html>
 
-<section aria-label="Skip links">
-	<ul>
-		<li><a href="#nav-main">Skip to site navigation</a></li>
-		<li><a href="#main">Skip to page content</a></li>
-	</ul>
-</section>
-
 <head>
 	{{- head() -}}
 </head>
 
 <body>
+
+	<section aria-label="Skip links">
+		<ul>
+			<li><a href="#nav-main">Skip to site navigation</a></li>
+			<li><a href="#main">Skip to page content</a></li>
+		</ul>
+	</section>
 
 	<header id="header">{{- header() -}}</header>
 	<nav id="nav-main">{{- nav(items=collections.pages) -}}</nav>

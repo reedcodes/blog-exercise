@@ -1,8 +1,17 @@
 /*
+ * Custom 11ty plugins.
+ */
+
+import date from './source/template/filters/date.js';
+
+/*
  * 11ty configurations.
  */
 
-export default async function (eleventyConfig) {}
+export default async function (eleventyConfig) {
+	// Add date filters to make it a little easier to write dates.
+	eleventyConfig.addPlugin(date);
+}
 
 export const config = {
 	//The source uses Nunjucks, Markdown, and HTML for its pages and templates.

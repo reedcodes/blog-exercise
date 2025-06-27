@@ -12,6 +12,11 @@ export const config = {
 	htmlTemplateEngine: "njk",
 	markdownTemplateEngine: "njk",
 
+	// The blog exercise site is hosted on gitHub Pages, so we add a directory
+	// `pathPrefix` that will be appended to all links and sources across the
+	// site without us needing to write the full path all the time.
+	pathPrefix: '/blog-exercise/',
+
 	// These are the folders that 11ty will use when compiling the built site.
 	// The directories for `input` and `output` are relative to the root of the
 	// project. The directories for `data`, `includes`, and `layouts` are

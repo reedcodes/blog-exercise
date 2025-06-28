@@ -1,12 +1,15 @@
 /*
  * Inherit 11ty plugins.
 */
+
+import { HtmlBasePlugin } from '@11ty/eleventy';
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 
 /*
  * Custom 11ty plugins.
  */
 
+import categories from './source/template/collections/categories.js';
 import tags from './source/template/collections/tags.js';
 import date from './source/template/filters/date.js';
 
@@ -15,6 +18,10 @@ import date from './source/template/filters/date.js';
  */
 
 export default async function (eleventyConfig) {
+	// Add the HTML base utility. This creates a URL across the site that includes
+	// the path prefix, if there is one. (There is. It's set below!)
+	eleventyConfig.addPlugin(HtmlBasePlugin);
+
 	// Add the image utility. This creates images with multiple sizes and outputs
 	// a `picture` element for more responsive images.
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {

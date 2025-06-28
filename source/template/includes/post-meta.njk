@@ -1,21 +1,21 @@
-{%- macro postMeta() -%}
+{%- macro postMeta(image, title, date, link, tags) -%}
 
 	<figure>
 		<img alt="{{- image.alt -}}" src="{{- image.source -}}">
-		<figcaption><a href="{{- image.link -}}">Photo credit {{ image.credit -}}</a></figcaption>
+		{%- if image.credit and layout == 'post' -%}
+			<figcaption><a href="{{- image.link -}}">Photo credit {{ image.credit -}}</a></figcaption>
+		{%- endif -%}
 	</figure>
 
-	<h1>{{- title -}}</h1>
-	<p>{{- date | date -}}</p>
-
-	{%- if category -%}
-		<dl>
-			<dt>Category:</dt>
-			<dd>{{- category -}}</dd>
-		</dl>
+	{%- if layout == 'post' -%}
+		<h1>{{- title -}}</h1>
+	{%- else -%}
+		<p><a href="{{- link -}}">{{- title -}}</a></p>
 	{%- endif -%}
 
-	{%- if tags -%}
+	<datetime>{{- date | date -}}</datetime>
+
+	{%- if tags and layout == 'post' -%}
 		<dl>
 			<dt>Tags:</dt>
 			{%- for tag in tags -%}

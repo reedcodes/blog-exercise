@@ -4,6 +4,6 @@ eleventyExcludeFromCollections: ["pages"]
 permalink: "/blog/tags/"
 ---
 
-{%- from "tag-list.njk" import tagList with context -%}
+{%- from "taxonomy.njk" import taxonomy with context -%}
 
-{{- tagList() -}}
+{{- taxonomy(collections.tags, 'tags') -}}

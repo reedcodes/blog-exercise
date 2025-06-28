@@ -1,9 +1,9 @@
 ---
 title: Tags
+eleventyExcludeFromCollections: ["pages"]
+permalink: "/blog/tags/"
 ---
 
-{%- for tag in collections.tags %}
-	{%- if tag != 'pages' and tag != 'posts' %}
-- {{ tag }}
-	{%- endif -%}
-{%- endfor -%}
+{%- from "tag-list.njk" import tagList with context -%}
+
+{{- tagList() -}}

@@ -19,7 +19,7 @@
 		<dl>
 			<dt>Tags:</dt>
 			{%- for tag in tags -%}
-				{%- if tag != 'posts' -%}<dd>{{- tag -}}</dd>{%- endif -%}
+				{%- if tag != 'posts' -%}<dd><a href="/blog/tags/{{- tag | slug -}}/">{{- tag -}}</a></dd>{%- endif -%}
 			{%- endfor -%}
 		</dl>
 	{%- endif -%}

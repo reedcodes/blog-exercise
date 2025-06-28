@@ -6,6 +6,6 @@ export default function(eleventyConfig) {
 			(item.data.tags || []).forEach(tag => tags.add(tag));
 		});
 
-		return([...tags]);
+		return([...tags].sort());
 	});
 };

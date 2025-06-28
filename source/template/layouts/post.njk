@@ -3,6 +3,14 @@ layout: base
 pageClass: post
 ---
 
-<h1>{{- title -}}</h1>
+{%- from "post-meta.njk" import postMeta with context -%}
 
-{{- content | safe -}}
+<article>
+	<div class="post-header">
+		{{- postMeta() -}}
+	</div>
+
+	<div class="post-content">
+		{{- content | safe -}}
+	</div>
+</article>

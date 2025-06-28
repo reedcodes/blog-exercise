@@ -1,0 +1,11 @@
+{%- macro postMeta() -%}
+
+	<figure>
+		<img alt="{{- image.alt -}}" src="{{- image.source -}}">
+		<figcaption><a href="{{- image.link -}}">Photo credit {{ image.credit -}}</a></figcaption>
+	</figure>
+
+	<h1>{{- title -}}</h1>
+	<p>{{- date | date -}}</p>
+
+{%- endmacro -%}

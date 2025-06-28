@@ -1,8 +1,10 @@
-// Add a filter to make date more readable. `dateObj` is the data date, and
+// Add a filter to make date more readable. `dateData` is the data date, and
 // `dateFormat` is the way we want to present it.
 
 export default function(eleventyConfig) {
-	eleventyConfig.addFilter('date', (dateObj, dateFormat) => {
+	eleventyConfig.addFilter('date', (dateData, dateFormat) => {
+		const dateObj = new Date(dateData);
+
 		// The year is the same regardless if the format is numeric or natural.
 		// Expected output: 2025
 		const year = dateObj.getUTCFullYear();

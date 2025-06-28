@@ -11,6 +11,7 @@ pageClass: page
 {%- for post in collections.posts | reverse %}
 	<li>
 		{{- post.date | date -}}:
-		<a href="{{- post.url | url -}}">{{- post.data.title -}}</a></li>
+		<a href="{{- post.url | url -}}">{{- post.data.title -}}</a>
+	</li>
 {%- endfor -%}
 </ul>

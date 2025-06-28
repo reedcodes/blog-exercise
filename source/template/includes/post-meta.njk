@@ -8,12 +8,20 @@
 	<h1>{{- title -}}</h1>
 	<p>{{- date | date -}}</p>
 
+	{%- if category -%}
+		<dl>
+			<dt>Category:</dt>
+			<dd>{{- category -}}</dd>
+		</dl>
+	{%- endif -%}
+
 	{%- if tags -%}
-		<ul>
+		<dl>
+			<dt>Tags:</dt>
 			{%- for tag in tags -%}
-				{%- if tag != 'posts' -%}<li>{{- tag -}}</li>{%- endif -%}
+				{%- if tag != 'posts' -%}<dd>{{- tag -}}</dd>{%- endif -%}
 			{%- endfor -%}
-		</ul>
+		</dl>
 	{%- endif -%}
 
 {%- endmacro -%}

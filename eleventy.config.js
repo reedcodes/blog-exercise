@@ -7,6 +7,7 @@ import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
  * Custom 11ty plugins.
  */
 
+import tags from './source/template/collections/tags.js';
 import date from './source/template/filters/date.js';
 
 /*
@@ -19,13 +20,15 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		formats: ['webp', 'jpeg'],
 		widths: [300, 600, 900, 1200, 1800],
-		htmlOptions: {
-			imgAttributes: {
-				loading: 'lazy',
-				decoding: 'async',
-			}
-		}
+		defaultAttributes: {
+			loading: 'lazy',
+			sizes: '100vw',
+			decoding: 'async',
+    }
 	});
+
+	// Add collections for easier filtering or looping.
+	eleventyConfig.addPlugin(tags);
 
 	// Add date filters to make it a little easier to write dates.
 	eleventyConfig.addPlugin(date);

@@ -9,7 +9,6 @@ import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
  * Custom 11ty plugins.
  */
 
-import categories from './source/template/collections/categories.js';
 import tags from './source/template/collections/tags.js';
 import date from './source/template/filters/date.js';
 

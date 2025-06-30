@@ -11,6 +11,4 @@ eleventyExcludeFromCollections: ["pages"]
 
 {%- from "post-list.njk" import postList with context -%}
 
-[All tags](/blog/tags/)
-
 {{- postList(collections[tag]) -}}

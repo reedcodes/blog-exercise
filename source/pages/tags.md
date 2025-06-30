@@ -1,6 +1,5 @@
 ---
 title: Tags
-eleventyExcludeFromCollections: ["pages"]
 permalink: "/blog/tags/"
 ---
 

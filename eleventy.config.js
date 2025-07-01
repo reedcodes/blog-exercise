@@ -38,6 +38,16 @@ export default async function (eleventyConfig) {
 
 	// Add date filters to make it a little easier to write dates.
 	eleventyConfig.addPlugin(date);
+
+	// Watch for changes to assets, such as images or style sheets, and refresh
+	// the website.
+	eleventyConfig.addWatchTarget('./source/**/*.scss');
+
+	// Send any static assets in the source directory to the built site.
+	eleventyConfig.addPassthroughCopy({
+		'./source/**/*.ttf': 'webfonts/'
+	});
+
 }
 
 export const config = {

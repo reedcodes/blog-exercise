@@ -19,8 +19,8 @@
 	"main": "eleventy.config.js",
 	"type": "module",
 	"scripts": {
-		"build:css": "sass --style=compressed --no-source-map ./source/presentation/scss:./site/css",
-		"watch:css": "sass --watch ./source/presentation/scss:./site/css",
+		"build:css": "sass --style=compressed --no-source-map ./source/presentation/scss:./site/presentation/css",
+		"watch:css": "sass --watch ./source/presentation/scss:./site/presentation/css",
 		"build:site": "npx @11ty/eleventy",
 		"watch:site": "npx @11ty/eleventy --quiet --serve",
 		"build": "npm-run-all build:*",

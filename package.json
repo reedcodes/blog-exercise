@@ -21,8 +21,8 @@
 	"scripts": {
 		"build:css": "sass --style=compressed --no-source-map ./source/presentation/scss:./site/css",
 		"watch:css": "sass --watch ./source/presentation/scss:./site/css",
-		"build:site": "npx @11ty/eleventy --quiet",
-		"watch:site": "npx @11ty/eleventy --serve",
+		"build:site": "npx @11ty/eleventy",
+		"watch:site": "npx @11ty/eleventy --quiet --serve",
 		"build": "npm-run-all build:*",
 		"start": "npm-run-all --parallel watch:*"
 	}

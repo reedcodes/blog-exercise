@@ -1,0 +1,19 @@
+$linkLineSize: max(2px, 0.1em);
+
+a {
+  transition: all 0.3s ease;
+  color: var(--link-color, var(--color-secondary));
+  text-decoration-thickness: var(--link-textDecorationThickness, #{$linkLineSize});
+  text-decoration-color: var(--link-textDecorationColor, currentColor);
+
+  &:focus, &:hover {
+    color: var(--link-color-focus, var(--color-tertiary-4-light));
+  }
+
+  &:focus {
+    border-radius: $linkLineSize;
+    outline: $linkLineSize solid currentColor;
+    outline-offset: $linkLineSize;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,7 @@
+// Scale brightness and contrast on images so they don't look so harsh on
+// dark background.
+img {
+	filter:
+		brightness(var(--image-brightness, 0.75))
+		contrast(var(--image-contrast, 1.25));
+}

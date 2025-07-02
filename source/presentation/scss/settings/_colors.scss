@@ -1,7 +1,35 @@
+@use "sass:color";
+
+$colors: (
+	"dark": #392d43,
+	"light": #e8e6d8,
+	"primary": #3d4853,
+	"secondary": #84c4b1,
+	"tertiary": #e75626
+);
+
 :root {
-	--color-background: #392d43;
-	--color-foreground: #e8e6d8;
-	--color-primary: #3d4853;
-	--color-secondary: #84c4b1;
-	--color-tertiary: #e75626;
+	// Create custom properties for each color in the palette.
+	@each $name, $color in $colors {
+		// Create the custom propery for each main color in the palette, and change
+		// its color space to `oklch`.
+		--color-#{$name}: #{color.to-space($color, oklch)};
+
+		// Now, create the color palette shades.
+		@for $step from 1 through 7 {
+			// Set each step as 12.5%. For lighter shades that step is a positive
+			// percentage. For darker, negative.
+			$scale-light: $step * 12.5%;
+			$scale-dark: $step * -12.5%;
+
+			// Adjust the color by those scales, and change the color space for
+			// to `oklch`.
+			$color-light: color.to-space(color.scale($color, $lightness: $scale-light), oklch);
+			$color-dark: color.to-space(color.scale($color, $lightness: $scale-dark), oklch);
+
+			// Now create the color's custom propery for light and dark shades.
+			--color-#{$name}-#{$step}-light: #{$color-light};
+			--color-#{$name}-#{$step}-dark: #{$color-dark};
+		}
+	}
 }

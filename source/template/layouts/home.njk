@@ -18,4 +18,7 @@ pageClass: home
 	<a href="/contact/">Contact</a>
 </section>
 
-{{- postList(collections.posts, size='4') -}}
+<section aria-labelledby="post-list">
+	<h2 id="post-list">Latest Blog Posts</h2>
+	{{- postList(collections.posts | reverse, size='4') -}}
+</section>

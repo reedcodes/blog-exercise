@@ -23,7 +23,7 @@
 	<datetime class="post-date">{{- date | date -}}</datetime>
 
 	{%- if layout != 'post' -%}
-		<a class="post-link" href="{{- link -}}" aria-labelledby="{{- title | slugify -}}">Read more</a>
+		<a class="post-link button" href="{{- link -}}" aria-labelledby="{{- title | slugify -}}">Read more</a>
 	{%- endif -%}
 
 	{%- if tags and layout == 'post' -%}

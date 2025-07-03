@@ -1,4 +1,6 @@
 .post-list {
+	container-name: post-list;
+	container-type: inline-size;
 	display: flex;
 	flex-direction: column;
 	gap: 5rem;
@@ -26,31 +28,33 @@
 		min-inline-size: 50%;
 	}
 
-	article:first-of-type {
-		display: grid;
-		grid-template-areas: 'main';
-		
-		.post-feature,
-		.post-info {
-			z-index: 1;
-			grid-area: main;
-		}
-		
-		.post-feature {
-			picture {
-				background-color: var(--color-primary);
+	@container post-list (inline-size > 640px ) { 
+		article:first-of-type {
+			display: grid;
+			grid-template-areas: 'main';
+
+			.post-feature,
+			.post-info {
+				z-index: 1;
+				grid-area: main;
 			}
 
-			img {
-				--image-brightness: 0.5;
+			.post-feature {
+				picture {
+					background-color: var(--color-primary);
+				}
 
-				mix-blend-mode: overlay;
+				img {
+					--image-brightness: 0.5;
+
+					mix-blend-mode: overlay;
+				}
 			}
-		}
-		
-		.post-info {
-			padding-block: 2em;
-			padding-inline: 5em;
+			
+			.post-info {
+				padding-block: 2em;
+				padding-inline: 5em;
+			}
 		}
 	}
 }

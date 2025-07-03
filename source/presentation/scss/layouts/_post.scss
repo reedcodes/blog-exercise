@@ -1,27 +1,3 @@
 .post-list {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	justify-content: flex-start;
-
-	article {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 2rem;
-	}
-
-	.post-feature {
-		flex-basis: 400px; 
-		flex-grow: 1;
-
-		img {
-			aspect-ratio: var(--postFeature-image-aspectRatio, 16/9);
-		}
-	}
-
-	.post-info {
-		flex-basis: 0;
-		flex-grow: 999;
-		min-inline-size: 50%;
-	}
+	
 }

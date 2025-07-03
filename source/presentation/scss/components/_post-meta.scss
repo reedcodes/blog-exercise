@@ -1,5 +1,14 @@
+.post-info {
+	--siblingText-marginBlockStart: 0;
+}
+
 .post-date {
 	display: block;
+}
+
+.post-title {
+	margin-block: 1.75rem;
+	line-height: 1.1;
 }
 
 .post-link {

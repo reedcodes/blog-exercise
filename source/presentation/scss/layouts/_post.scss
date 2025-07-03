@@ -11,8 +11,42 @@
 		grid-template-columns: subgrid;
 	}
 
-	.post-header {
+	.post-feature {
+		--postFeature-image-aspectRatio: 21/9;
+
 		grid-column: full;
+		display: grid;
+		grid-template-areas: 'main';
+		justify-items: end;
+		align-items: start;
+
+		picture,
+		figcaption {
+			grid-area: main;
+		}
+
+		picture {
+			z-index: -1;
+		}
+
+		figcaption {
+			padding-block: 0.25em;
+			padding-inline: 1em;
+			background-color: var(--postFeature-figcaption-backgroundColor, var(--color-dark-4-dark));
+			font-size: 1rem;
+		}
+	}
+
+	.post-info {
+		grid-column: wide;
+		margin-block-start: -2em;
+		padding-block: 1em;
+		padding-inline: 2em;
+		background-color: var(--postInfo-backgroundColor, var(--color-secondary-5-dark));
+	}
+
+	.post-title {
+		margin-block-start: 0;
 	}
 
 	.post-content {

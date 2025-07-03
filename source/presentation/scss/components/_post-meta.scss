@@ -1,0 +1,15 @@
+.post-feature {
+	img {
+		aspect-ratio: var(--postFeature-image-aspectRatio, 4/3);
+		object-fit: cover;
+	}
+}
+
+.post-date {
+	display: block;
+}
+
+.post-link {
+	display: inline-block;
+	inline-size: fit-content;
+}

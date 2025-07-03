@@ -2,18 +2,21 @@
 
 {%- macro postList(collection, size) -%}
 
+<div class="post-list">
 {%- for post in collection -%}
 	{%- set image = post.data.image -%}
 	{%- set title = post.data.title -%}
 	{%- set date = post.data.date -%}
 	{%- set link = post.url -%}
+	{%- set category = post.data.category -%}
 
 	{%- if size and loop.index <= size -%}
-		<article>{{- postMeta(image, title, date, link) -}}</article>
+		<article>{{- postMeta(image, title, date, link, category) -}}</article>
 	{%- elseif not size -%}
-		<article>{{- postMeta(image, title, date, link) -}}</article>
+		<article>{{- postMeta(image, title, date, link, category) -}}</article>
 	{%- endif -%}
 
 {%- endfor -%}
+</div>
 
 {%- endmacro -%}

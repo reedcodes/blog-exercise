@@ -1,4 +1,4 @@
-{%- macro postMeta(image, title, date, link) -%}
+{%- macro postMeta(image, title, date, link, category) -%}
 
 {%- set titleTag -%}
 	{{- 'h1' if layout == 'post' else 'p' -}}
@@ -12,14 +12,18 @@
 </figure>
 
 <div class="post-info">
-	<{{- titleTag }} class="post-title">
+	<dl class="post-category">
+		<dt>Category:</dt>
+		<dd>{{- category -}}</dd>
+	</dl>
+	<{{- titleTag }} id="{{- title | slugify -}}" class="post-title {{ 'h3' if titleTag == 'p' -}}">
 		{{- title -}}
 	</{{- titleTag -}}>
 
 	<datetime class="post-date">{{- date | date -}}</datetime>
 
 	{%- if layout != 'post' -%}
-		<a class="post-link" href="{{- link -}}">Read more<span>: {{ title }}</a>
+		<a class="post-link" href="{{- link -}}" aria-labelledby="{{- title | slugify -}}">Read more</a>
 	{%- endif -%}
 
 	{%- if tags and layout == 'post' -%}

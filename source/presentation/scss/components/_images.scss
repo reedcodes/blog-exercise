@@ -4,4 +4,7 @@ img {
 	filter:
 		brightness(var(--image-brightness, 0.75))
 		contrast(var(--image-contrast, 1.25));
+	aspect-ratio: var(--image-aspectRatio, 16/9);
+	object-fit: var(--image-objectFit, cover);
+	border-radius: var(--image-borderRadius, 1rem);
 }

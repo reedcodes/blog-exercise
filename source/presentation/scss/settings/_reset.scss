@@ -50,7 +50,9 @@ figure,
 blockquote,
 dl,
 table {
-  margin-block-end: 0;
+  margin-block: 0;
+
+  + * { margin-block-start: var(--siblingText-marginBlockStart, 1.5rem); }
 }
 
 a {

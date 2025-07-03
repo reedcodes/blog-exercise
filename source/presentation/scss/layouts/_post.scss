@@ -1,0 +1,21 @@
+.post .main {
+	.container {
+		grid-column: full;
+		display: grid;
+		grid-template-columns: subgrid;
+	}
+
+	.post {
+		grid-column: full;
+		display: grid;
+		grid-template-columns: subgrid;
+	}
+
+	.post-header {
+		grid-column: full;
+	}
+
+	.post-content {
+		grid-column: main;
+	}
+}

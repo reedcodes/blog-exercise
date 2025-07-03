@@ -1,7 +1,29 @@
 body {
-  background-color: var(--color-background, var(--color-dark));
-  color: var(--color-foreground, var(--color-light));
-  font-family: "Public Sans", system-ui, sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.5;
+	background-color: var(--color-background, var(--color-dark));
+	color: var(--color-foreground, var(--color-light));
+	font-family: "Public Sans", system-ui, sans-serif;
+	font-size: 1.25rem;
+	line-height: 1.5;
+}
+
+.skip,
+.header,
+.nav-main,
+.main,
+.footer {
+	display: grid;
+	grid-template-columns:
+	[full-start]
+			minmax(0, 1fr)
+				[wide-start]
+					2rem
+					[main-start] minmax(0, 80ch) [main-end]
+					2rem
+				[wide-end]
+			minmax(0, 1fr)
+		[full-end];
+}
+
+.container {
+	grid-column: main;
 }

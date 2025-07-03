@@ -10,21 +10,21 @@
 	{{- head() -}}
 </head>
 
-<body>
+<body class="{{- pageClass -}}">
 
-	<section aria-label="Skip links">
-		<ul>
+	<section id="skip" class="skip" aria-label="Skip links"><div class="container">
+		<ul role="list">
 			<li><a href="#nav-main">Skip to site navigation</a></li>
 			<li><a href="#main">Skip to page content</a></li>
 		</ul>
-	</section>
+	</div></section>
 
-	<header id="header">{{- header() -}}</header>
-	<nav id="nav-main">{{- nav(items=collections.pages) -}}</nav>
+	<header id="header" class="header"><div class="container">{{- header() -}}</div></header>
+	<nav id="nav-main" class="nav-main"><div class="container">{{- nav(items=collections.pages) -}}</div></nav>
 
-	<main id="main">{{- content | safe -}}</main>
+	<main id="main" class="main"><div class="container">{{- content | safe -}}</div></main>
 
-	<footer id="footer">{{- footer() -}}</footer>
+	<footer id="footer" class="footer"><div class="container">{{- footer() -}}</div></footer>
 
 </body>
 

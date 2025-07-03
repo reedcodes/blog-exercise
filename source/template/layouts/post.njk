@@ -5,7 +5,7 @@ pageClass: post
 
 {%- from "post-meta.njk" import postMeta with context -%}
 
-<article>
+<article class="post">
 	<div class="post-header">
 		{{- postMeta(image, title, date, tags) -}}
 	</div>

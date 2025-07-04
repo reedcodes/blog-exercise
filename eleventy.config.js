@@ -17,6 +17,11 @@ import date from './source/template/filters/date.js';
  */
 
 export default async function (eleventyConfig) {
+	// For anything we want to only dry run, set a variable based on the
+	// 11ty build environment, and set dry run to `true` if we are on a
+	// test environment.
+	const dryRunVar = process.env.BUILD_ENV === 'test' ? true : false;
+
 	// Add the HTML base utility. This creates a URL across the site that includes
 	// the path prefix, if there is one. (There is. It's set below!)
 	eleventyConfig.addPlugin(HtmlBasePlugin);
@@ -30,7 +35,8 @@ export default async function (eleventyConfig) {
 			loading: 'lazy',
 			sizes: '100vw',
 			decoding: 'async',
-    }
+    },
+		dryRun: `{$dryRunVar}`
 	});
 
 	// Add collections for easier filtering or looping.

@@ -2,4 +2,26 @@
 	padding-block: 2rem;
 	border-block-start: 0.25em solid var(--color-tertiary);
 	background-color: var(--color-primary);
+
+	.footer-title {
+		font-size: 2rem;
+	}
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 1rem;
+		column-gap: 4rem;
+
+		> * {
+			flex-grow: 1;
+			flex-basis: calc((50ch - 100%) * 999);
+		}
+
+		> :nth-last-child(n+ 4),
+		.footer > :nth-last-child(n+ 4) ~ * {
+			flex-basis: 100%;
+		}
+	}
+
 }

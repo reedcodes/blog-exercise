@@ -1,4 +1,10 @@
 body {
+	display: grid;
+	grid-template-rows:
+		max-content // Header
+		max-content // Main navigation
+		auto // Main content
+		1fr; // Footer
 	background-color: var(--color-background, var(--color-dark));
 	color: var(--color-foreground, var(--color-light));
 	font-family: "Public Sans", system-ui, sans-serif;

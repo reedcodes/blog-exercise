@@ -1,0 +1,23 @@
+$linkLineSize: max(2px, 0.1em);
+
+a {
+  --link-backgroundColor: transparent;
+  --link-color: var(--color-secondary);
+
+  transition: all 0.3s ease;
+  background-color: var(--link-backgroundColor);
+  color: var(--link-color);
+  outline: $linkLineSize solid var(--link-outline-color, transparent);
+  outline-offset: $linkLineSize;
+  text-decoration-thickness: var(--link-textDecorationThickness, #{$linkLineSize});
+  text-decoration-color: var(--link-textDecorationColor, currentColor);
+
+  &:focus, &:hover {
+    color: var(--link-color-focus, var(--color-tertiary-4-light));
+  }
+
+  &:focus {
+    --link-outline-color: currentColor;
+    text-decoration: none;
+  }
+}

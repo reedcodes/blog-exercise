@@ -1,0 +1,25 @@
+---
+layout: base
+pageClass: home
+---
+
+{%- from "post-list.njk" import postList with context -%}
+
+<section class="home-hero" aria-labelledby="hero-title">
+	<figure class="home-hero-feature">
+		<img alt="Illustration of a laptop on a desk, with an open notebook on the left and a cup of coffee on the right" src="/presentation/images/Qqn9VFkdV6E-unsplash.png">
+	</figure>
+	<div class="home-hero-info">
+		<h1 id="hero-title">{{- meta.title -}}</h1>
+
+		{{- content | safe -}}
+
+		<a href="/about/" class="button">About</a>
+		<a href="/contact/" class="button button-accent">Contact</a>
+	</div>
+</section>
+
+<section class="home-post-list" aria-labelledby="post-list">
+	<h2 id="post-list">Latest Blog Posts</h2>
+	{{- postList(collections.posts | reverse, size='4') -}}
+</section>

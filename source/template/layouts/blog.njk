@@ -1,0 +1,12 @@
+---
+layout: base
+pageClass: page
+---
+
+{%- from "post-list.njk" import postList with context -%}
+
+<h1>{{- title -}}</h1>
+
+{{- content | safe -}}
+
+{{- postList(pagination.items) -}}

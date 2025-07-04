@@ -1,0 +1,31 @@
+{%- from "head.njk" import head with context -%}
+{%- from "header.njk" import header with context -%}
+{%- from "nav.njk" import nav with context -%}
+{%- from "footer.njk" import footer with context -%}
+
+<!doctype html>
+<html lang="{{- meta.language -}}">
+
+<head>
+	{{- head() -}}
+</head>
+
+<body class="{{- pageClass -}}">
+
+	<section id="skip" class="skip" aria-label="Skip links"><div class="container">
+		<ul role="list">
+			<li><a href="#nav-main">Skip to site navigation</a></li>
+			<li><a href="#main">Skip to page content</a></li>
+		</ul>
+	</div></section>
+
+	<header id="header" class="header"><div class="container">{{- header() -}}</div></header>
+	<nav id="nav-main" class="nav-main"><div class="container">{{- nav(items=collections.pages) -}}</div></nav>
+
+	<main id="main" class="main"><div class="container">{{- content | safe -}}</div></main>
+
+	<footer id="footer" class="footer"><div class="container">{{- footer() -}}</div></footer>
+
+</body>
+
+</html>

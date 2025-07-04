@@ -1,0 +1,18 @@
+.skip {
+	a {
+		--link-backgroundColor: var(--color-dark-4-dark);
+
+		clip-path: inset(100%);
+		position: absolute;
+		overflow: hidden;
+		padding-block: 0.25em;
+		padding-inline: 0.5em;
+		font-weight: 600;
+		font-size: 1.5rem;
+	}
+
+	a:focus {
+		clip-path: none;
+		overflow: visible;
+	}
+}

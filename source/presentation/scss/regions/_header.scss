@@ -1,0 +1,32 @@
+.header {
+	.container {
+		container-name: header;
+		container-type: inline-size;
+	}
+
+	p {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.25em;
+		align-items: center;
+		justify-items: start;
+		font-weight: 600;
+		font-size: var(--header-title-fontSize, 2rem);
+		line-height: 1;
+		text-shadow:
+			0.025em 0.025em 0 var(--header-title-color, var(--color-tertiary));
+	}
+
+	svg {
+		fill: var(--header-logo-fillColor, var(--color-tertiary));
+		block-size: auto;
+		inline-size: var(--header-logo-inlineSize, 48px);
+	}
+
+	@container header (inline-size > 640px) {
+		p {
+			--header-title-fontSize: 3rem;
+			--header-logo-inlineSize: 96px;
+		}
+	}
+}

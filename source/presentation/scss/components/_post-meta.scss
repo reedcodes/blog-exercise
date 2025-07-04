@@ -1,0 +1,27 @@
+.post-info {
+	--siblingText-marginBlockStart: 0;
+}
+
+.post-date {
+	display: block;
+}
+
+.post-title {
+	margin-block: 1.75rem;
+	line-height: 1.1;
+}
+
+.post-link {
+	display: inline-block;
+	inline-size: fit-content;
+}
+
+.post-category,
+.post-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+
+	dt { font-weight: 600; }
+	dd { margin-inline: 0; }
+}

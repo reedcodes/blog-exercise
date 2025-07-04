@@ -1,5 +1,6 @@
 ---
 title: About
+order: 2
 ---
 
 Suspendisse facilisis quam libero, nec ullamcorper nibh lobortis at. Integer ac iaculis nisl, et hendrerit erat. Integer justo leo, malesuada a odio vel, feugiat viverra enim. Fusce non ex ut orci egestas mattis a in tortor. Aenean molestie quam quis congue faucibus. Mauris sed congue purus. Vestibulum aliquam quam sit amet lorem sagittis venenatis. Nulla facilisi. Etiam ut hendrerit dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc sit amet lectus massa. Nunc sagittis eleifend mauris, interdum volutpat lectus.

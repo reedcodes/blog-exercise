@@ -19,4 +19,23 @@
 {%- endfor -%}
 </div>
 
+{%- if pagination.href.previous -%}
+  {%- set blogUrlPrevious = pagination.href.previous -%}
+{%- endif -%}
+
+{%- if pagination.href.next -%}
+  {%- set blogUrlNext = pagination.href.next -%}
+{%- endif -%}
+
+{%- if blogUrlPrevious or blogUrlNext -%}
+  <nav class="post-pagination" aria-label="blog pagination links">
+		{%- if blogUrlPrevious -%}
+			<a class="pagination-previous button" href="{{- blogUrlPrevious -}}" data-direction="backwards">Previous</a>
+		{%- endif -%}
+		{%- if blogUrlNext -%}
+			<a class="pagination-next button" href="{{- blogUrlNext -}}" data-direction="forwards">Next</a>
+		{%- endif -%}
+  </nav>
+{%- endif -%}
+
 {%- endmacro -%}

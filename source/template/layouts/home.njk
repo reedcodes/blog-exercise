@@ -5,20 +5,22 @@ pageClass: home
 
 {%- from "post-list.njk" import postList with context -%}
 
-<section aria-labelledby="hero-title">
-	<figure>
+<section class="home-hero" aria-labelledby="hero-title">
+	<figure class="home-hero-feature">
 		<img alt="Illustration of a laptop on a desk, with an open notebook on the left and a cup of coffee on the right" src="/presentation/images/Qqn9VFkdV6E-unsplash.png">
 		<figcaption><a href="https://unsplash.com/illustrations/a-laptop-computer-sitting-on-top-of-a-desk-next-to-a-cup-of-coffee-Qqn9VFkdV6E">Photo credit Art Attack</a></figcaption>
 	</figure>
-	<h1 id="hero-title">{{- meta.title -}}</h1>
+	<div class="home-hero-info">
+		<h1 id="hero-title">{{- meta.title -}}</h1>
 
-	{{- content | safe -}}
+		{{- content | safe -}}
 
-	<a href="/about/" class="button">About</a>
-	<a href="/contact/" class="button button-accent">Contact</a>
+		<a href="/about/" class="button">About</a>
+		<a href="/contact/" class="button button-accent">Contact</a>
+	</div>
 </section>
 
-<section aria-labelledby="post-list">
+<section class="home-post-list" aria-labelledby="post-list">
 	<h2 id="post-list">Latest Blog Posts</h2>
 	{{- postList(collections.posts | reverse, size='4') -}}
 </section>

@@ -1,0 +1,36 @@
+.home {
+
+	.main .container {
+		grid-column: full;
+		display: grid;
+		grid-template-columns: subgrid;
+	}
+}
+
+.home-hero {
+	grid-column: wide;
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 2rem;
+	column-gap: min(4vw, 5rem);
+	align-items: center;
+	margin-block-end: 5rem;
+}
+
+.home-hero-feature {
+	--image-aspectRatio: 1;
+
+	flex-basis: 400px; 
+	flex-grow: 1;
+}
+
+.home-hero-info {
+	flex-basis: 0;
+	flex-grow: 999;
+	min-inline-size: 40%;
+	margin-block-start: 0;
+}
+
+.home-post-list {
+	grid-column: main;
+}

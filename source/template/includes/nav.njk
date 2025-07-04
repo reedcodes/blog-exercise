@@ -1,7 +1,7 @@
 {%- macro nav(items) -%}
 
 <ul role="list">
-{%- for item in items -%}
+{%- for item in items | sort(false, false, 'data.order') -%}
 	<li><a href="{{- item.url -}}">{{- item.data.title -}}</a></li>
 {%- endfor -%}
 </ul>

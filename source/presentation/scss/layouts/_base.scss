@@ -1,12 +1,15 @@
 body {
+	--base-backgroundColor: var(--color-dark);
+	--base-color: var(--color-light);
+
 	display: grid;
 	grid-template-rows:
 		max-content // Header
 		max-content // Main navigation
 		auto // Main content
 		1fr; // Footer
-	background-color: var(--color-background, var(--color-dark));
-	color: var(--color-foreground, var(--color-light));
+	background-color: var(--base-backgroundColor);
+	color: var(--base-color);
 	font-family: "Public Sans", system-ui, sans-serif;
 	font-size: 1.25rem;
 	line-height: 1.5;

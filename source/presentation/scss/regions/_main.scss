@@ -1,4 +1,9 @@
 .main {
 	container-name: main;
 	container-type: inline-size;
+	padding-block: 2rem;
+
+	.container {
+		grid-column: main;
+	}
 }

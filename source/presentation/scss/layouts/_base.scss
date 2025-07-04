@@ -15,7 +15,6 @@ body {
 	line-height: 1.5;
 }
 
-.skip,
 .header,
 .nav-main,
 .main,
@@ -34,5 +33,5 @@ body {
 }
 
 .container {
-	grid-column: main;
+	grid-column: wide;
 }

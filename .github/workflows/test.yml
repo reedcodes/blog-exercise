@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install and build the site
+      - name: Install and test the site build
         run: |
           npm install
-          npm run build
+          npm run test

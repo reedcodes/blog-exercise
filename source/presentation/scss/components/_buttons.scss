@@ -1,0 +1,30 @@
+button, .button {
+	--button-backgroundColor: var(--color-secondary-2-light);
+	--button-color: var(--color-primary-2-dark);
+
+	cursor: pointer;
+	display: inline-block;
+	inline-size: fit-content;
+	padding-block: 0.25em;
+	padding-inline: 0.75em;
+	border: 0.125em solid currentColor;
+	background-color: var(--button-backgroundColor);
+	color: var(--button-color);
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1;
+	font-family: inherit;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:focus,
+	&:hover {
+		background-color: var(--button-color);
+		color: var(--button-backgroundColor);
+	}
+}
+
+.button-accent {
+	--button-backgroundColor: var(--color-tertiary-2-light);
+	--button-color: var(--color-tertiary-6-dark);
+}

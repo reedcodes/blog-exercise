@@ -1,0 +1,30 @@
+@use 'sass:math';
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	font-weight: 600;
+	text-wrap: balance;
+}
+
+// Major second scale.
+$type-scale: 1.125;
+
+// Heading levels.
+$headings: 6, 5, 4, 3, 2, 1;
+$heading-size: 1.25rem;
+
+// Loop through the list of headings and set the font size based on the
+// type scale. Starting at the smallest and ending at the largest allows
+// us to base that heading's size on the previous one.
+@each $heading in $headings {
+	$heading-size: $heading-size * $type-scale;
+
+	h#{$heading},
+	.h#{$heading} {
+		font-size: var(--heading-fontSize, #{$heading-size});
+	}
+}

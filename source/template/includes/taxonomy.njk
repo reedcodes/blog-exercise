@@ -1,0 +1,13 @@
+{%- macro taxonomy(collection, type) -%}
+
+<ul>
+{%- for taxonomy in collection %}
+	{%- if taxonomy != 'pages' and taxonomy != 'posts' %}
+		<li>
+			<a href="/blog/{{- type -}}/{{- taxonomy | slug -}}/">{{- taxonomy -}}</a>
+		</li>
+	{%- endif -%}
+{%- endfor -%}
+</ul>
+
+{%- endmacro -%}

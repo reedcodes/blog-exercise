@@ -1,0 +1,37 @@
+body {
+	--base-backgroundColor: var(--color-dark);
+	--base-color: var(--color-light);
+
+	display: grid;
+	grid-template-rows:
+		max-content // Header
+		max-content // Main navigation
+		auto // Main content
+		1fr; // Footer
+	background-color: var(--base-backgroundColor);
+	color: var(--base-color);
+	font-family: "Public Sans", system-ui, sans-serif;
+	font-size: 1.25rem;
+	line-height: 1.5;
+}
+
+.header,
+.nav-main,
+.main,
+.footer {
+	display: grid;
+	grid-template-columns:
+	[full-start]
+			minmax(1rem, 1fr)
+				[wide-start]
+					minmax(0, 1fr)
+					[main-start] minmax(0, 80ch) [main-end]
+					minmax(0, 1fr)
+				[wide-end]
+			minmax(1rem, 1fr)
+		[full-end];
+}
+
+.container {
+	grid-column: wide;
+}

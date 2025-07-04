@@ -1,0 +1,9 @@
+{%- macro nav(items) -%}
+
+<ul role="list">
+{%- for item in items -%}
+	<li><a href="{{- item.url -}}">{{- item.data.title -}}</a></li>
+{%- endfor -%}
+</ul>
+
+{%- endmacro -%}

@@ -1,3 +1,7 @@
+# /site/ doesn't need to be committed to the repository, since this is all
+# generated on build. Only the source files are needed.
+site
+
 # Logs
 logs
 *.log

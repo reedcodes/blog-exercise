@@ -1,0 +1,37 @@
+{%- macro head() -%}
+
+{#- In case anyone is still using Internet Explorer, make the site act more
+		like Edge browsers. #}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{#- Make sure pages display as expected in all browsers, specifically mobile
+		browsers or touchscreens, which may need user-zoom capabilities. #}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{#- Set the HTML character encoding. -#}
+<meta charset="{{- meta.charset -}}">
+
+{#- This is the title of the page, that appears in the browser title bar.
+		It pulls in the title from the page or post front matter, and appends the
+		site title to the title. #}
+<title>{{- title }} [{{ meta.title }}]</title>
+<meta name="title" content="{{- title }} [{{ meta.title }}]">
+
+{#- Set up content data. #}
+<meta name="author" content="{{- meta.author -}}">
+<meta name="description" content="{{- meta.description -}}">
+
+{#- Set up page data. #}
+<meta name="generator" content="{{- meta.generator -}}">
+<link rel="icon" href="{{- meta.favicon -}}">
+<link rel="canonical" href="{{- meta.uri -}}{{- page.url -}}">
+
+{#- Set up Open Graph metadata. #}
+<meta property="og:type" content="{{- meta.type -}}">
+<meta property="og:title" content="{{- title }} [{{ meta.title }}]">
+<meta property="og:description" content="{{- meta.description -}}">
+
+{#- Set up site assets. #}
+<link rel="stylesheet" href="/presentation/css/styles.css">
+
+{%- endmacro -%}

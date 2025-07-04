@@ -1,0 +1,7 @@
+{
+	"tags": "posts",
+	"layout": "post",
+	"eleventyComputed": {
+		"permalink": "/blog/post/{{- date | date('numeric') -}}-{{- title | slugify -}}/"
+	}
+}

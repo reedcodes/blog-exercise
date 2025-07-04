@@ -1,0 +1,74 @@
+.post {
+
+	.main {
+		padding-block-start: 0;
+	}
+
+	.main .container {
+		grid-column: full;
+		display: grid;
+		grid-template-columns: subgrid;
+	}
+
+	.post {
+		grid-column: full;
+		display: grid;
+		grid-template-columns: subgrid;
+	}
+
+	.post-feature {
+		--image-aspectRatio: 16/9;
+
+		grid-column: full;
+		display: grid;
+		grid-template-areas: 'feature';
+		justify-items: end;
+		align-items: start;
+
+		@media (orientation: portrait) {
+			--image-aspectRatio: 3/4;
+		}
+
+		picture,
+		figcaption {
+			grid-area: feature;
+		}
+
+		picture {
+			z-index: -1;
+			max-inline-size: 1800px;
+			margin-inline: auto;
+		}
+
+		figcaption {
+			padding-block: 0.25em;
+			padding-inline: 1em;
+			background-color: var(--postFeature-figcaption-backgroundColor, var(--color-dark-4-dark));
+			font-size: 1rem;
+		}
+	}
+
+	.post-info {
+		grid-column: wide;
+		margin-block-end: 2em;
+
+		@container main (inline-size > 80ch) {
+			margin-block-start: -2em;
+			padding-block: 1em;
+			padding-inline: 2em;
+			background-image: linear-gradient(
+				to bottom,
+				var(--color-secondary-5-dark) 2em,
+				transparent
+			);
+		}
+	}
+
+	.post-title {
+		margin-block-start: 0;
+	}
+
+	.post-content {
+		grid-column: main;
+	}
+}

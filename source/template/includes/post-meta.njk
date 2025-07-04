@@ -1,0 +1,39 @@
+{%- macro postMeta(image, title, date, link, category) -%}
+
+{%- set titleTag -%}
+	{{- 'h1' if layout == 'post' else 'p' -}}
+{%- endset -%}
+
+<figure class="post-feature">
+	<img alt="{{- image.alt -}}" src="{{- image.source -}}">
+	{%- if image.credit and layout == 'post' -%}
+		<figcaption><a href="{{- image.link -}}">Photo credit {{ image.credit -}}</a></figcaption>
+	{%- endif -%}
+</figure>
+
+<div class="post-info">
+	<dl class="post-category">
+		<dt>Category:</dt>
+		<dd>{{- category -}}</dd>
+	</dl>
+	<{{- titleTag }} id="{{- title | slugify -}}" class="post-title {{ 'h2' if titleTag == 'p' -}}">
+		{{- title -}}
+	</{{- titleTag -}}>
+
+	<datetime class="post-date">{{- date | date -}}</datetime>
+
+	{%- if layout != 'post' -%}
+		<a class="post-link button" href="{{- link -}}" aria-labelledby="{{- title | slugify -}}">Read more</a>
+	{%- endif -%}
+
+	{%- if tags and layout == 'post' -%}
+		<dl class="post-tags">
+			<dt>Tags:</dt>
+			{%- for tag in tags -%}
+				{%- if tag != 'posts' -%}<dd><a href="/blog/tags/{{- tag | slug -}}/">{{- tag -}}</a></dd>{%- endif -%}
+			{%- endfor -%}
+		</dl>
+	{%- endif -%}
+
+</div>
+{%- endmacro -%}

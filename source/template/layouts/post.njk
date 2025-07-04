@@ -1,0 +1,14 @@
+---
+layout: base
+pageClass: post
+---
+
+{%- from "post-meta.njk" import postMeta with context -%}
+
+<article class="post">
+	{{- postMeta(image, title, date, tags, category) -}}
+
+	<div class="post-content">
+		{{- content | safe -}}
+	</div>
+</article>

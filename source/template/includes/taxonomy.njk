@@ -1,6 +1,6 @@
 {%- macro taxonomy(collection, type) -%}
 
-<ul>
+<ul class="{{- type -}}-list" role="list">
 {%- for taxonomy in collection %}
 	{%- if taxonomy != 'pages' and taxonomy != 'posts' %}
 		<li>
